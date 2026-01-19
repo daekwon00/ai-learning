@@ -1,323 +1,124 @@
-# Week 1: Python + ML 기초 (56시간)
+# Week 1: Python + ML 기초
 
-> **목표:** Python 데이터 과학 + Scikit-learn + PyTorch 기초 완성
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-MPS-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 
-## 📅 주차 일정
+> 포트폴리오용 Week 1 결과물: 데이터 분석, 전통 ML, PyTorch 기초를 단계적으로 정리
 
-### Day 1-2 (월-화): Python 데이터 과학 도구 마스터
-**학습 시간:** 16시간
-- NumPy 고급 연산
-- Pandas DataFrame 조작
-- Matplotlib/Seaborn 시각화
+---
 
-### Day 3-4 (수-목): Scikit-learn + 전통 ML
-**학습 시간:** 16시간
-- 데이터 전처리
-- Logistic Regression, Random Forest
-- 모델 평가 (Precision, Recall, F1)
+## 1) 학습 목표 및 달성 내용
 
-### Day 5-7 (금-일): PyTorch 기초 + 딥러닝 입문
-**학습 시간:** 24시간
-- Tensor 연산
-- 신경망 구현
-- MNIST 분류
+### 학습 목표
 
-## 🎯 학습 목표
+- 금융 도메인 데이터를 활용해 데이터 분석/모델링 기초를 다진다.
+- Scikit-learn 파이프라인과 평가 지표를 이해한다.
+- PyTorch 텐서/신경망/MNIST 분류 흐름을 완성한다.
 
-### 핵심 역량
-- ✅ Pandas로 금융 데이터 전처리
-- ✅ NumPy 벡터 연산 마스터
-- ✅ Scikit-learn ML 파이프라인
-- ✅ PyTorch 신경망 구현
+### 달성 내용
 
-### 완성 프로젝트
-1. **주식 데이터 분석** - Pandas, NumPy
-2. **신용 평가 모델** - Scikit-learn
-3. **PyTorch MNIST** - PyTorch 기초
+- 주식 데이터 분석 파이프라인 구축 (수집 → 전처리 → 지표 → 시각화)
+- 신용평가 ML 파이프라인 구성 (EDA → 전처리 → 모델 비교 → 최적화)
+- PyTorch 기초 학습 + MNIST CNN 학습 및 상세 평가
 
-## 📚 학습 강의
+---
 
-### Day 1-2 (6시간 강의)
-- Coursera: "Python for Data Science" (속성)
-- YouTube: 생활코딩 Numpy/Pandas (핵심만)
+## 2) 프로젝트 목록
 
-### Day 3-4 (6시간 강의)
-- Coursera: Machine Learning (Andrew Ng) Week 1-2
-- Fast.ai: Tabular Learner
+- `stock_analysis.ipynb`: 주식 데이터 분석 (Pandas, Matplotlib)
+- `credit_scoring.ipynb`: 신용평가 ML (Scikit-learn)
+- `pytorch_basics.ipynb`: PyTorch 기초 + MNIST
 
-### Day 5-7 (9시간 강의)
-- PyTorch 공식 튜토리얼 (60분 블리츠)
-- DeepLearning.AI: Neural Networks Basics
-- Fast.ai Lesson 1-2
+---
 
-## 🛠️ 필수 패키지 설치
+## 3) 프로젝트 설명 및 실행 방법
+
+### A. `stock_analysis.ipynb` — 주식 데이터 분석
+
+- 사용 기술: `yfinance`, `pandas`, `matplotlib`, `seaborn`
+- 주요 학습 내용
+  - 한국 주식 3종목 데이터 수집 (삼성전자/하이닉스/NAVER)
+  - 이동평균/변동성/기술지표 산출 및 시각화
+  - 리스크/수익률 분석과 종목 비교
+- 실행 방법
+  - Jupyter에서 `stock_analysis.ipynb` 실행
+
+### B. `credit_scoring.ipynb` — 신용평가 ML
+
+- 사용 기술: `scikit-learn`, `pandas`, `numpy`, `matplotlib`, `seaborn`
+- 주요 학습 내용
+  - EDA 및 전처리 파이프라인 구축
+  - 여러 모델 비교 및 최적화(GridSearch)
+  - 모델 해석(Feature Importance/SHAP) 및 저장
+- 실행 방법
+  - Kaggle 데이터가 있을 경우 `week1/data/cs-training.csv`에 저장 후 실행
+  - 없으면 샘플 데이터로 자동 생성
+
+### C. `pytorch_basics.ipynb` — PyTorch 기초 + MNIST
+
+- 사용 기술: `torch`, `torchvision`, `matplotlib`
+- 주요 학습 내용
+  - 텐서 연산/자동미분/선형회귀
+  - nn.Module 기반 신경망과 옵티마이저 비교
+  - MNIST 데이터 로딩, CNN 학습, 상세 평가
+- 실행 방법
+  - `pytorch_basics.ipynb` 실행 (MNIST 자동 다운로드)
+
+---
+
+## 4) 설치 방법
 
 ```bash
 conda activate ai-dev
-
-# Day 1-2
-pip install numpy pandas matplotlib seaborn scikit-learn jupyter yfinance
-
-# Day 3-4
-conda install scikit-learn -y
-
-# Day 5-7
-conda install pytorch torchvision torchaudio -c pytorch -y
+pip install -r week1/requirements.txt
 ```
-
-## 💻 실습 프로젝트
-
-### Project 1: 금융 데이터 분석 (Day 1-2)
-
-**파일:** `stock_analysis.ipynb`
-
-```python
-"""
-주식 데이터 분석 프로젝트
-1. yfinance로 은행 주가 수집
-2. Pandas 전처리
-3. NumPy 지표 계산 (이동평균, 볼린저밴드)
-4. Matplotlib 시각화
-5. 상관관계 분석
-"""
-
-import yfinance as yf
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# 신한은행, 국민은행 주가
-tickers = ['055550.KS', '105560.KS']
-data = yf.download(tickers, start='2023-01-01', end='2024-01-01')
-
-# 이동평균선
-data['MA20'] = data['Close'].rolling(window=20).mean()
-data['MA60'] = data['Close'].rolling(window=60).mean()
-
-# 볼린저 밴드
-data['Upper'] = data['MA20'] + 2*data['Close'].rolling(window=20).std()
-data['Lower'] = data['MA20'] - 2*data['Close'].rolling(window=20).std()
-
-# 시각화
-plt.figure(figsize=(15, 7))
-plt.plot(data.index, data['Close'], label='Close Price')
-plt.plot(data.index, data['MA20'], label='MA20')
-plt.plot(data.index, data['MA60'], label='MA60')
-plt.legend()
-plt.show()
-```
-
-**체크포인트:**
-- [ ] yfinance로 데이터 수집
-- [ ] Pandas DataFrame 조작 숙련
-- [ ] NumPy 계산 구현
-- [ ] 시각화 완성
 
 ---
 
-### Project 2: 신용 평가 모델 (Day 3-4)
+## 5) 디렉토리 구조
 
-**파일:** `credit_scoring.ipynb`
-
-```python
-"""
-신용 평가 모델 프로젝트
-Dataset: Kaggle - Credit Card Default
-1. 데이터 전처리 (결측치, 스케일링)
-2. Train/Test 분할
-3. Random Forest 학습
-4. 모델 평가
-"""
-
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report, confusion_matrix
-import pandas as pd
-
-# 데이터 로드
-df = pd.read_csv('credit_data.csv')
-
-# 전처리
-X = df.drop('default', axis=1)
-y = df['default']
-
-# 스케일링
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-# Train/Test 분할
-X_train, X_test, y_train, y_test = train_test_split(
-    X_scaled, y, test_size=0.2, random_state=42
-)
-
-# 모델 학습
-rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
-rf_model.fit(X_train, y_train)
-
-# 평가
-y_pred = rf_model.predict(X_test)
-print(classification_report(y_test, y_pred))
-
-# Cross-validation
-cv_scores = cross_val_score(rf_model, X_scaled, y, cv=5)
-print(f'CV Scores: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})')
+```
+week1/
+├── README.md
+├── summary.md
+├── requirements.txt
+├── stock_analysis.ipynb
+├── credit_scoring.ipynb
+├── pytorch_basics.ipynb
+├── data/
+└── outputs/
 ```
 
-**체크포인트:**
-- [ ] 데이터 전처리 완료
-- [ ] ML 파이프라인 구축
-- [ ] 모델 평가 지표 이해
-- [ ] Cross-validation 적용
+---
+
+## 6) 스크린샷 (차트 예시)
+
+> 실제 실행 후 생성된 이미지 경로를 연결하세요.
+
+![주식 종가 추이](outputs/close_prices_3stocks.png)
+![신용평가 EDA 예시](outputs/credit_eda_example.png)
+![MNIST 예측 예시](outputs/mnist_confusion_matrix.png)
 
 ---
 
-### Project 3: PyTorch MNIST (Day 5-7)
+## 7) 학습 후기 및 다음 단계
 
-**파일:** `pytorch_basics.ipynb`
+### 학습 후기
 
-```python
-"""
-PyTorch MNIST 분류
-1. Tensor 연산 마스터
-2. 신경망 구현
-3. 학습/검증 파이프라인
-4. 95% 이상 정확도 달성
-"""
+- 데이터 전처리와 시각화가 모델 성능과 해석의 핵심임을 체감
+- 전통 ML과 딥러닝의 학습 루프 차이를 명확히 이해
+- 금융 도메인에서는 **설명력 + 성능**의 균형이 중요함을 확인
 
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+### 다음 단계
 
-# 1. 데이터 로드
-transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.1307,), (0.3081,))
-])
-
-train_dataset = datasets.MNIST(
-    './data', train=True, download=True, transform=transform
-)
-test_dataset = datasets.MNIST(
-    './data', train=False, transform=transform
-)
-
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)
-
-# 2. 신경망 정의
-class SimpleNN(nn.Module):
-    def __init__(self):
-        super(SimpleNN, self).__init__()
-        self.fc1 = nn.Linear(784, 128)
-        self.fc2 = nn.Linear(128, 64)
-        self.fc3 = nn.Linear(64, 10)
-        self.relu = nn.ReLU()
-        self.dropout = nn.Dropout(0.2)
-    
-    def forward(self, x):
-        x = x.view(-1, 784)
-        x = self.relu(self.fc1(x))
-        x = self.dropout(x)
-        x = self.relu(self.fc2(x))
-        x = self.dropout(x)
-        x = self.fc3(x)
-        return x
-
-# 3. 학습 루프
-def train(model, device, train_loader, optimizer, epoch):
-    model.train()
-    for batch_idx, (data, target) in enumerate(train_loader):
-        data, target = data.to(device), target.to(device)
-        optimizer.zero_grad()
-        output = model(data)
-        loss = nn.CrossEntropyLoss()(output, target)
-        loss.backward()
-        optimizer.step()
-        
-        if batch_idx % 100 == 0:
-            print(f'Epoch: {epoch}, Batch: {batch_idx}, Loss: {loss.item():.4f}')
-
-# 4. 평가
-def test(model, device, test_loader):
-    model.eval()
-    test_loss = 0
-    correct = 0
-    with torch.no_grad():
-        for data, target in test_loader:
-            data, target = data.to(device), target.to(device)
-            output = model(data)
-            test_loss += nn.CrossEntropyLoss()(output, target).item()
-            pred = output.argmax(dim=1, keepdim=True)
-            correct += pred.eq(target.view_as(pred)).sum().item()
-    
-    accuracy = 100. * correct / len(test_loader.dataset)
-    print(f'Test Accuracy: {accuracy:.2f}%')
-    return accuracy
-
-# 5. 실행
-device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
-model = SimpleNN().to(device)
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-for epoch in range(1, 11):
-    train(model, device, train_loader, optimizer, epoch)
-    accuracy = test(model, device, test_loader)
-```
-
-**체크포인트:**
-- [ ] PyTorch Tensor 연산 이해
-- [ ] 신경망 구조 구현
-- [ ] 학습/검증 파이프라인
-- [ ] 95% 이상 정확도 달성
+- PyTorch 심화(CNN 성능 개선, 정규화/스케줄러 적용)
+- 불균형 데이터 처리(SMOTE, class weight)
+- 모델 해석/검증 체계 고도화(캘리브레이션, 오류 분석)
 
 ---
 
-## ✅ Week 1 완료 체크리스트
+## 8) 요약 노트
 
-### 프로젝트 완성도
-- [ ] Project 1: 주식 데이터 분석 ✅
-- [ ] Project 2: 신용 평가 모델 ✅
-- [ ] Project 3: PyTorch MNIST 95%+ ✅
-
-### 기술 습득
-- [ ] Pandas DataFrame 자유자재
-- [ ] NumPy 벡터 연산 마스터
-- [ ] Scikit-learn 파이프라인
-- [ ] PyTorch Tensor & 신경망
-
-### GitHub
-- [ ] 3개 프로젝트 커밋
-- [ ] README 작성
-- [ ] 학습 노트 정리
-
-### 다음 주 준비
-- [ ] Week 2 계획 확인
-- [ ] CNN 개념 예습
-- [ ] LSTM 이론 학습
-
-## 🔗 참고 자료
-
-- [Pandas 공식 문서](https://pandas.pydata.org/docs/)
-- [Scikit-learn 튜토리얼](https://scikit-learn.org/stable/tutorial/)
-- [PyTorch 튜토리얼](https://pytorch.org/tutorials/)
-- [Kaggle Credit Card Dataset](https://www.kaggle.com/datasets)
-
-## 📊 학습 시간 기록
-
-| 일자 | 활동 | 시간 | 완료 |
-|------|------|------|------|
-| Day 1 | NumPy, Pandas 강의 + 실습 | 8h | [ ] |
-| Day 2 | 주식 분석 프로젝트 | 8h | [ ] |
-| Day 3 | Scikit-learn 강의 | 8h | [ ] |
-| Day 4 | 신용 평가 모델 | 8h | [ ] |
-| Day 5 | PyTorch 기초 | 8h | [ ] |
-| Day 6 | MNIST 프로젝트 | 8h | [ ] |
-| Day 7 | 복습 & 정리 | 8h | [ ] |
-
----
-
-**Week 1 완료 후 → Week 2 (PyTorch 심화 + BERT)로 진행**
+- 1주차 요약: `summary.md`
