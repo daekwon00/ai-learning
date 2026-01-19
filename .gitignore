@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# 환경 변수
+.env
+.env.local
+
+# 데이터셋 (용량 큰 파일)
+datasets/*.csv
+datasets/*.zip
+datasets/*.tar.gz
+
+# 모델 파일
+models/*.pt
+models/*.pth
+models/*.h5
+models/*.pkl
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Conda
+ai-dev-environment.yml

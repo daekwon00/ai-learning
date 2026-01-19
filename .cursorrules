@@ -1,0 +1,170 @@
+# AI Python 개발자 학습 프로젝트 - Cursor Rules
+
+## 프로젝트 정보
+- 프로젝트명: AI Python 개발자 전환 5주 부트캠프
+- 학습자: 27년 경력 Java 개발자 (금융/공공 도메인)
+- 현재: 1주차 - Python ML/DL 기초
+- 환경: M4 Mac, Python 3.11 (conda ai-dev)
+
+## 개발자 배경
+- Java 27년 경력 (Spring Boot, MSA 아키텍처)
+- JavaScript/Vue.js 프론트엔드 개발
+- 금융권 프로젝트 다수 (신한은행, 미래에셋생명)
+- Python ML/AI 라이브러리는 처음 학습 중
+
+## 코드 작성 규칙
+
+### 1. 주석 스타일
+```python
+# ✅ 모든 코드에 한글 주석 필수
+# ✅ 각 함수/클래스의 목적 명확히 설명
+# ✅ Java 개발자 관점에서 이해할 수 있도록 비유 포함
+
+# 예시:
+def calculate_returns(prices):
+    """
+    주식 수익률 계산 함수
+    
+    Args:
+        prices (pd.Series): 주가 시계열 데이터
+    
+    Returns:
+        pd.Series: 일별 수익률 (백분율)
+    
+    Note:
+        - pct_change()는 (현재가 - 이전가) / 이전가 계산
+        - Java의 stream().map()과 유사한 벡터 연산
+    """
+    return prices.pct_change() * 100
+```
+
+### 2. 코드 스타일
+- PEP 8 준수
+- 함수는 단일 책임 원칙 (SRP)
+- 변수명은 명확하고 설명적으로 (snake_case)
+- 복잡한 로직은 작은 함수로 분리
+
+### 3. Java 개발자를 위한 설명
+- Pandas DataFrame ≈ Java의 List<Map<String, Object>>
+- NumPy array ≈ Java의 배열 + 벡터 연산
+- List comprehension ≈ Stream API
+- 항상 Java 코드와 비교 예시 제공
+
+### 4. 에러 처리
+```python
+# ✅ try-except 사용
+# ✅ 구체적인 예외 타입 명시
+# ✅ 에러 메시지에 한글 설명 포함
+
+try:
+    df = pd.read_csv('data.csv')
+except FileNotFoundError as e:
+    print(f"❌ 파일을 찾을 수 없습니다: {e}")
+except pd.errors.EmptyDataError:
+    print("❌ 빈 파일입니다")
+```
+
+### 5. 시각화 규칙
+- 모든 그래프에 한글 제목/라벨 추가
+- 폰트: 맑은 고딕 또는 시스템 기본
+- 그리드 추가 (alpha=0.3)
+- 범례 위치 최적화
+- 저장 시 DPI 300 이상
+
+## 학습 중점 사항
+
+### 1주차 목표
+- [ ] NumPy, Pandas 마스터
+- [ ] Scikit-learn 기본 모델 구현
+- [ ] PyTorch 텐서 및 신경망 기초
+- [ ] 3개 실습 프로젝트 완성
+
+### 프로젝트 구조
+```
+week1/
+├── stock_analysis.ipynb      # 주식 데이터 분석
+├── credit_scoring.ipynb       # 신용평가 ML 모델
+└── pytorch_basics.ipynb       # PyTorch 기초
+```
+
+## AI 응답 스타일
+
+### ✅ 항상 포함
+1. 코드 설명 (한글)
+2. 왜 이 방법을 선택했는지
+3. Java와의 비교 (가능한 경우)
+4. 실무 활용 예시
+5. 대안 방법 (있는 경우)
+
+### ✅ 코드 제공 시
+- 완전히 실행 가능한 코드
+- import 문 포함
+- 샘플 데이터 생성 코드 포함
+- 주석으로 각 단계 설명
+
+### ✅ 설명 스타일
+- 초보자도 이해할 수 있게
+- 단, 개발 경력 27년을 고려해 너무 기초적인 설명은 생략
+- 전문 용어 사용 OK, 단 한글 설명 추가
+
+### ❌ 피해야 할 것
+- 영어 주석만 있는 코드
+- 설명 없이 코드만 던지기
+- 너무 추상적인 설명
+- 작동하지 않는 불완전한 코드
+
+## 특수 요구사항
+
+### M4 Mac 최적화
+- PyTorch는 MPS (Metal Performance Shaders) 사용
+- 장치 설정: `device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")`
+- conda 패키지 관리 우선 (pip는 필요시만)
+
+### 금융 도메인 활용
+- 예제는 가능한 금융/공공 도메인 데이터 사용
+- 주식, 신용평가, 리스크 관리 등
+- 실무에서 바로 적용 가능한 코드 제공
+
+## 예제 템플릿
+
+### Jupyter Notebook 셀 구조
+```python
+# =============================================================================
+# 1. 라이브러리 임포트 및 설정
+# =============================================================================
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 한글 폰트 설정 (Mac)
+plt.rcParams['font.family'] = 'AppleGothic'
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
+
+# =============================================================================
+# 2. 데이터 로드
+# =============================================================================
+# (코드 + 설명)
+
+# =============================================================================
+# 3. 데이터 전처리
+# =============================================================================
+# (코드 + 설명)
+
+# ... 이하 생략
+```
+
+## 응답 우선순위
+1. 정확성 (작동하는 코드)
+2. 학습 효과 (이해하기 쉬운 설명)
+3. 실무 적용성 (베스트 프랙티스)
+4. 코드 품질 (가독성, 유지보수성)
+
+---
+
+이 규칙을 따라 모든 응답을 생성해주세요.
+```
+
+### 4. **파일 저장 후 Cursor 재시작**
+- Cursor 완전히 종료 후 재시작
+- 또는 `Cmd+Shift+P` → "Reload Window"
