@@ -29,7 +29,7 @@ ai-learning/
 | Phase | 주제 | 기간 | 상태 |
 |-------|------|------|------|
 | - | Python/ML 기초 | 완료 | :white_check_mark: |
-| 1 | Python LangChain RAG + ChromaDB | 2~3일 | 미착수 |
+| 1 | Python LangChain RAG + ChromaDB | 완료 | :white_check_mark: |
 | 2 | AI Agent (Tool Calling, ReAct) | 2~3일 | 미착수 |
 | 3 | PyTorch BERT Fine-tuning | 2~3일 | 미착수 |
 | 4 | FastAPI + Docker 배포 | 2~3일 | 미착수 |
