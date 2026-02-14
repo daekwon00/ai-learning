@@ -16,6 +16,7 @@ ENV/
 # 환경 변수
 .env
 .env.local
+.env.example
 
 # 데이터셋 (용량 큰 파일)
 datasets/*.csv
@@ -27,6 +28,17 @@ models/*.pt
 models/*.pth
 models/*.h5
 models/*.pkl
+*.safetensors
+
+# ChromaDB 로컬 저장소
+chroma_db/
+**/chroma_db/
+
+# HuggingFace 캐시
+.cache/
+
+# Docker
+.docker/
 
 # MacOS
 .DS_Store
@@ -39,9 +51,16 @@ models/*.pkl
 *.swp
 *.swo
 
+# Claude Code
+.claude/
+
 # Logs
 logs/
 *.log
 
 # Conda
 ai-dev-environment.yml
+
+# Node.js (rag-project 관련)
+node_modules/
+.next/

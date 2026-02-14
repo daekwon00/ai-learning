@@ -1,0 +1,23 @@
+# LangChain RAG Pipeline
+langchain>=1.2.0
+langchain-openai>=0.3.0
+langchain-chroma>=0.2.0
+langchain-text-splitters>=0.3.0
+langchain-huggingface>=0.2.0
+
+# Vector DB
+chromadb>=1.4.0
+
+# Document Processing
+pypdf>=6.0.0
+
+# Embeddings
+sentence-transformers>=5.0.0
+openai>=2.0.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# Notebook
+jupyter>=1.0.0
+matplotlib>=3.9.0
