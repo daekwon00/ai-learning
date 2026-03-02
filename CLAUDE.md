@@ -78,6 +78,7 @@ version('langchain-chroma')  # langchain_chroma.__version__은 없음
 ## Conventions
 
 - 한국어로 질문하면 한국어로 답변
+- 옵시디안 문서: `~/Documents/ObsidianVaults/DkVault/1-projects/02_DkDev/06_AiLearning/`
 - 각 Phase 디렉토리에 `README.md`, `summary.md`, `requirements.txt` 포함
 - 노트북은 실행 결과 포함 상태로 커밋
 - `chroma_db/`, `.env`, `__pycache__/`는 gitignore 대상
