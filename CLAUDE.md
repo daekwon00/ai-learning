@@ -82,3 +82,9 @@ version('langchain-chroma')  # langchain_chroma.__version__은 없음
 - 각 Phase 디렉토리에 `README.md`, `summary.md`, `requirements.txt` 포함
 - 노트북은 실행 결과 포함 상태로 커밋
 - `chroma_db/`, `.env`, `__pycache__/`는 gitignore 대상
+
+## SDD (Spec-Driven Development)
+- 프로젝트 요구사항: prd.md 참고
+- 작업 진행: docs/ 하위의 phase/step 문서를 따를 것
+- 각 step 완료 시: docs/progress.md 체크리스트 업데이트
+- 현재 진행 상황 확인: /sdd status
